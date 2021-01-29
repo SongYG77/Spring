@@ -1,0 +1,11 @@
+package diexam.di.ui;
+
+public class GridExamConsole implements ExamConsole {
+
+	@Override
+	public void print1() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

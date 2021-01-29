@@ -1,0 +1,9 @@
+package diexam.di;
+
+public interface Exam {
+	
+	public int total();
+	public int avg();
+	
+
+}

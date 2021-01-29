@@ -1,0 +1,23 @@
+package diexam.di.ui;
+
+import diexam.di.lec.Exam;
+
+public class GridExamConsole implements ExamConsole {
+
+	
+	private Exam exam;
+	public GridExamConsole(Exam exam) {
+		this.exam = exam;
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void print1() {
+		// TODO Auto-generated method stub
+		System.out.println("Grid Print");
+		System.out.printf("total : %d\n",exam.total());
+		System.out.println("---------------------");
+		System.out.printf("avg : %f\n",exam.avg());
+	}
+
+}

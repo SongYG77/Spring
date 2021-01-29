@@ -1,0 +1,6 @@
+package diexam.di.ui;
+
+public interface ExamConsole {
+	void print1();
+	
+}

@@ -1,0 +1,10 @@
+package diexam.di;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@ComponentScan("diexam.di.ui")
+@Configuration
+public class NewlecDiConfig {
+
+}

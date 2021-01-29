@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Exam exam = new NewlecExam(); -->
+ 	<bean id = "exam" class = "diexam.di.lec.NewlecExam">
+ 		<property name="kor"> 
+ 			<value>20</value>
+ 		</property>
+ 		<property name="eng" value="30"></property>
+ 	
+ 	
+ 	</bean>
+	<!--ExamConsole console = new GridExamConsole();  -->
+	<bean id = "console" class = "diexam.di.ui.GridExamConsole">
+		<!-- console.setExam(exam);  -->
+		<!-- setExam을 Property name에는 set을 빼고 처음 글자를 소문자로 하면 댐. -->
+		<!-- value형태의 값을 넣어주면 value = "", exam은 레퍼런스라 ref = "" -->
+		<property name="exam" ref = "exam"/>
+	</bean>
+	
+
+</beans>

@@ -1,0 +1,34 @@
+package diexam.di;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import diexam.di.lec.Exam;
+import diexam.di.lec.NewlecExam;
+import diexam.di.ui.ExamConsole;
+import diexam.di.ui.GridExamConsole;
+import diexam.di.ui.InlineConsole;
+
+public class Program {
+	public static void main(String[] args) {
+		
+		/* 스프링에게 지시하는 방법으로 변경
+		Exam exam = new NewlecExam();
+		//ExamConsole console = new InlineConsole(exam);
+		ExamConsole console = new GridExamConsole();
+		
+		console.setExam(exam);
+		*/
+		//ExamConsole console = ?;
+		//setting xml을 이용해 지시서를 만들어 위 내용을 다 만들어줬다.
+		//이제 해야 할 일은 지시서를 불러오는 것이다.
+		
+		ApplicationContext context = 
+				new ClassPathXmlApplicationContext("spring/di/setting.xml");
+		//ExamConsole console = (ExamConsole) context.getBean("console");
+		//또는
+		ExamConsole console = context.getBean(Exconsole.class);
+		
+		console.print1();
+	}
+}

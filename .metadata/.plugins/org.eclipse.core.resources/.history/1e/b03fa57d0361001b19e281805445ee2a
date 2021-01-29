@@ -1,0 +1,5 @@
+package diexam.di.ui;
+
+public class InlineConsole implements ExamConsole {
+
+}

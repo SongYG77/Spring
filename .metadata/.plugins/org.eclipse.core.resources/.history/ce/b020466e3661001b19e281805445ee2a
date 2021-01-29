@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<context:annotation-config />
+	<!-- Exam exam = new NewlecExam(); -->
+	<!-- <bean id="exam" class="diexam.di.lec.NewlecExam"> <constructor-arg 
+		index="3" value = "20"/> <constructor-arg index="1" value = "30"/> <constructor-arg 
+		index="2" value = "40"/> <constructor-arg name = "kor" value = "50"/> </bean> -->
+	<bean id="exam1" class="diexam.di.lec.NewlecExam" p:kor="10"
+		p:eng="20" p:math="30" p:com="40" />
+	<!--ExamConsole console = new GridExamConsole(); -->
+	<bean id="console" class="diexam.di.ui.GridExamConsole">
+		<!-- console.setExam(exam); -->
+		<!-- setExam을 Property name에는 set을 빼고 처음 글자를 소문자로 하면 댐. -->
+		<!-- value형태의 값을 넣어주면 value = "", exam은 레퍼런스라 ref = "" -->
+		<!-- <property name="exam" ref="exam" /> -->
+	</bean>
+
+	<util:list id="exams" list-class = "java.util.ArrayList"> 
+		<list>
+			<bean class="diexam.di.lec.NewlecExam" p:kor="10" p:eng="20"
+				p:math="30" p:com="40" />
+			<ref bean="exam" />
+
+		</list>
+	</util:list>
+	<!-- <bean id="exams" class="java.util.ArrayList"> <constructor-arg> <list> 
+		<bean class="diexam.di.lec.NewlecExam" p:kor="10" p:eng="20" p:math="30" 
+		p:com="40" /> <ref bean="exam"/> </list> </constructor-arg> </bean> -->
+
+
+</beans>

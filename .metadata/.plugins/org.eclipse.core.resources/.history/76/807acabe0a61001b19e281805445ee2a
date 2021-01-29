@@ -1,0 +1,19 @@
+package diexam.di;
+
+import diexam.di.lec.Exam;
+import diexam.di.lec.NewlecExam;
+import diexam.di.ui.ExamConsole;
+import diexam.di.ui.GridExamConsole;
+import diexam.di.ui.InlineConsole;
+
+public class Program {
+	public static void main(String[] args) {
+		Exam exam = new NewlecExam();
+		//ExamConsole console = new InlineConsole(exam);
+		ExamConsole console = new GridExamConsole();
+		
+		console.setExam(exam);
+		
+		console.print1();
+	}
+}

@@ -1,0 +1,24 @@
+package diexam.di.ui;
+
+import diexam.di.lec.Exam;
+
+public class InlineConsole implements ExamConsole {
+
+	private Exam exam;
+	
+	public InlineConsole(Exam exam) {
+		this.exam = exam;
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public void print1() {
+		System.out.printf("total : %d, avg : %f\n",exam.total(),exam.avg());
+		
+	}
+	@Override
+	public void setExam(Exam exam) {
+		this.exam = exam;
+		
+	}
+
+}

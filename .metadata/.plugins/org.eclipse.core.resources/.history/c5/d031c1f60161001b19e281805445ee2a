@@ -1,0 +1,7 @@
+package diexam.di.lec;
+
+import diexam.di.Exam;
+
+public class NewlecExam implements Exam {
+
+}

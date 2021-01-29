@@ -1,0 +1,11 @@
+package diexam.di;
+
+import diexam.di.lec.Exam;
+import diexam.di.lec.NewlecExam;
+
+public class Program {
+	public static void main(String[] args) {
+		Exam exam = new NewlecExam();
+		
+	}
+}
